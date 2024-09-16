@@ -12,8 +12,7 @@ export class ProductsService {
   ) {}
 
   create(createProductDto: CreateProductDto) {
-    console.log('createProductDto: ', createProductDto);
-    return 'This action adds a new product';
+    return this.productModel.create(createProductDto);
   }
 
   findAll() {

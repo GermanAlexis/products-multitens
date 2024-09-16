@@ -52,8 +52,22 @@ pnpm start:dev
 
 ### Pasos Clave
 
-- Se detalló el propósito y el funcionamiento de la aplicación.
-- Se incluyó un paso a paso para instalar y ejecutar el proyecto.
-- Se explicó cómo funciona la identificación de tenants y el manejo de datos para cada uno.
+## 🗄️ Estructura de MongoDB por Tenant
 
-Este README le proporciona a los usuarios una descripción clara y los pasos necesarios para interactuar con tu aplicación backend. ¡Espero que te sirva!
+Cada tenant tiene su propio esquema con el formato `tenant_[tenantId]`. A continuación, se muestra cómo se ve la estructura en MongoDB:
+
+1. **Vista General de los Schemas**:
+   ![alt text](image.png)
+
+2. **Colección de Productos por Tenant**:
+   ![alt text](image-1.png)
+
+## 🖼️ Evidencias del Resultado
+
+A continuación, se muestran algunas imágenes que evidencian el funcionamiento de la aplicación:
+
+1. **Listado de Productos por Tenant**:
+   ![Listado de productos  tenant # 66e89ebacfa74f2239d7a5c6 ]
+   ![alt text](image-2.png)
+   ![Listado de productos  tenant # 66e894e82cfeaeb5d37fe28e ]
+   ![alt text](image-3.png)

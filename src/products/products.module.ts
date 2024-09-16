@@ -17,6 +17,6 @@ export class ProductsModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply(TenantsIdentifierMiddleware)
-      .forRoutes({ path: 'products', method: RequestMethod.GET });
+      .forRoutes({ path: 'products', method: RequestMethod.ALL });
   }
 }
