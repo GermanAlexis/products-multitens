@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { CreateProductDto } from '../dto/create-product.dto';
 import { UpdateProductDto } from '../dto/update-product.dto';
 import { Model } from 'mongoose';
-import { PROVIDER } from 'src/providers/enums/provider.enum';
+import { PROVIDER } from 'src/config/providers/enums/provider.enum';
 import { Product } from '../domain/product.schema';
 
 @Injectable()

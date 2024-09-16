@@ -2,72 +2,58 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# 🛍️ Products Multi-Tenant Backend
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Este es un proyecto backend construido con [NestJS](https://nestjs.com/) y utilizando [pnpm](https://pnpm.io/) como manejador de paquetes. La aplicación implementa operaciones CRUD (Crear, Leer, Actualizar y Eliminar) sobre un esquema de productos, soportando múltiples tenants bajo el concepto de **multi-tenancy** y arquitectura **hexagonal**. También se utiliza **MongoDB** como base de datos.
 
-## Description
+## 🏗️ Tecnologías Utilizadas
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- **NestJS**: Framework para crear aplicaciones backend en Node.js.
+- **pnpm**: Manejador de paquetes rápido y eficiente.
+- **MongoDB**: Base de datos NoSQL para almacenar los productos.
+- **Arquitectura Hexagonal**: Diseño que promueve la separación de responsabilidades.
+- **Multi-Tenant**: Permite manejar múltiples tenants en una sola instancia de la aplicación.
 
-## Installation
+## 🚀 Características
 
-```bash
-$ pnpm install
-```
+- CRUD completo para productos.
+- Implementación de multi-tenancy.
+- Arquitectura hexagonal para mantener una estructura limpia y escalable.
+- Base de datos basada en MongoDB.
 
-## Running the app
+## ⚙️ Funcionamiento
 
-```bash
-# development
-$ pnpm run start
+1. **Creación del Tenant**: Inicialmente, se debe crear un tenant.
+2. **Identificación del Tenant**: El tenant se identifica mediante el encabezado HTTP `x-tenant-id`, el cual se envía en cada solicitud.
+3. **Esquema del Tenant**: Cada tenant tiene su propio esquema de base de datos, que se crea con el formato `tenant_[tenantId]`. En este esquema se almacenarán todos los productos asociados a dicho tenant.
 
-# watch mode
-$ pnpm run start:dev
+## 📦 Instalación y Ejecución
 
-# production mode
-$ pnpm run start:prod
-```
+Sigue los siguientes pasos para instalar y ejecutar la aplicación en tu entorno local.
 
-## Test
+### 1. Clonar el repositorio
 
 ```bash
-# unit tests
-$ pnpm run test
-
-# e2e tests
-$ pnpm run test:e2e
-
-# test coverage
-$ pnpm run test:cov
+git clone https://github.com/GermanAlexis/products-multitens.git
+cd products-multitens
 ```
 
-## Support
+### 2. instalar PNPM
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```
+pnpm install
+```
 
-## Stay in touch
+### 2. Correr el proyecto
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```
+pnpm start:dev
+```
 
-## License
+### Pasos Clave
 
-Nest is [MIT licensed](LICENSE).
+- Se detalló el propósito y el funcionamiento de la aplicación.
+- Se incluyó un paso a paso para instalar y ejecutar el proyecto.
+- Se explicó cómo funciona la identificación de tenants y el manejo de datos para cada uno.
+
+Este README le proporciona a los usuarios una descripción clara y los pasos necesarios para interactuar con tu aplicación backend. ¡Espero que te sirva!

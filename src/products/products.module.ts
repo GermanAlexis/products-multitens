@@ -5,7 +5,7 @@ import {
   RequestMethod,
 } from '@nestjs/common';
 import { ProductsController } from './infrastructure/products.controller';
-import { TenantModels } from 'src/providers/tenant_models.provider';
+import { TenantModels } from 'src/config/providers/tenant_models.provider';
 import { ProductsService } from './application/products.service';
 import { TenantsIdentifierMiddleware } from 'src/middlewares/tenants-identifier/tenants-identifier.middleware';
 

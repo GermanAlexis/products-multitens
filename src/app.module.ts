@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ProductsModule } from './products/products.module';
 import { MongooseModule } from '@nestjs/mongoose';
-import { mongooseModuleAsyncOptions } from './mongoose/mongoose.module';
+import { mongooseModuleAsyncOptions } from './config/mongoose/mongoose.module';
 import { ConfigModule } from '@nestjs/config';
 import { TenantsModule } from './tenants/tenants.module';
 
